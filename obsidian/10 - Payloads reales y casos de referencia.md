@@ -102,6 +102,9 @@ public async Task GetData_Returns_Ok_And_Data()
    - `data` solo trae columnas solicitadas
 
 ## 6) Convención recomendada de nombres
-- Backend DTO PascalCase (`RowID`, `Username`).
-- Front payload camelCase (`rowID`, `username`) cuando aplique en cliente.
-- Mantener mapeo estable y documentado.
+- **Backend DTO:** PascalCase (`RowID`, `Username`, `BirthDate`)
+- **Frontend JSON:** camelCase (automático en Angular `HttpClient`)
+- **Mapeando:** El paquete maneja conversión automáticamente
+- **Regla:** Mantén nombre del property del DTO = `field` en requests
+- **Ejemplo:** DTO prop `BirthDate` → request field `"birthDate"` (Angular lo convierte)
+- **Evita:** Renombrar sin versionado o documentación de cambios

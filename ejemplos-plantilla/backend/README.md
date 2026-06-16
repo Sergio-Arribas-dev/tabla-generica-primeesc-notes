@@ -5,16 +5,18 @@ Backend mínimo funcional para tabla genérica.
 ## Quickstart
 ```bash
 cd backend
-dotnet new globaljson --sdk-version 8.0.0 --roll-forward latestFeature
-dotnet new webapi -n Demo.Tables
+# Crear proyecto
+dotnet new webapi -n Demo.Tables --framework net8.0
 cd Demo.Tables
+
+# Instalar paquetes requeridos
 dotnet add package ECS.PrimeNGTable
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer
-dotnet add package System.Linq.Dynamic.Core
-dotnet add package ClosedXML
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 8.0.0
+dotnet add package System.Linq.Dynamic.Core --version 1.7.0
+dotnet add package ClosedXML --version 0.105.0
 ```
 
-Reemplaza los archivos según estructura `/src` de este proyecto.
+**Luego:** Reemplaza archivos `.cs` de esta carpeta en tu proyecto (respeta estructura de namespaces).
 
 ## Estructura
 ```

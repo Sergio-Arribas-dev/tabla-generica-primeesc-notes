@@ -193,8 +193,14 @@ rows: {
 }
 ```
 
-## 8) Buenas prácticas front
-- Siempre usar `createTableOptions(...)`.
-- Mantener `tableOptions` inmutable salvo cambios explícitos.
-- Evitar lógica de filtro en cliente (la resuelve backend).
-- No mezclar la API de tabla con endpoints de negocio no relacionados.
+## 8) Checklist frontend rápido
+- ✓ Usar `createTableOptions()` (nunca `{}` directo)
+- ✓ Registrar adapters HTTP y Notification en `app.config.ts`
+- ✓ Implementar `ECSPrimengTableHttpService` (GET + POST)
+- ✓ Implementar `ECSPrimengTableNotificationService` (showToast + clearToasts)
+- ✓ URLs endpoints sin `/api/` base (adapter lo añade)
+- ✓ No duplicar lógica de filtro en cliente
+- ✓ Usar `onDataEndUpdate` para sincronizaciones post-fetch
+- ✓ Mantener `tableOptions` inmutable (no hacer `tableOptions.header = ...`)
+- ✓ Validar CORS en backend si front ≠ backend port
+- ✓ Tests: mock adapters, verificar `createTableOptions` construcción

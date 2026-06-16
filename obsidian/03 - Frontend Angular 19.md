@@ -34,10 +34,10 @@ Usar `onDataEndUpdate` para:
 - No dupliques modelo de backend en múltiples sitios.
 - Un `Facade` por pantalla de tabla si hay lógica extra.
 
-## Compatibilidad Angular 19
-- Revisar versión de PrimeNG soportada por Angular 19.
-- Si usas paquete compilado de otra versión, validar:
-  - build
-  - estilos
-  - eventos
-  - tipos
+## Angular 19 espec\u00edfico
+- `package.json`: Angular \u226519.0.0, TypeScript \u22655.6.0
+- PrimeNG \u226519.0.0 (compatible con Angular 19)
+- Usar `standalone` en componentes (no m\u00f3dulos)
+- `app.config.ts` para providers (no `AppModule`)
+- `createTableOptions()` obligatorio para inicializar tabla
+- Validar imports correctos en cada servicio/component

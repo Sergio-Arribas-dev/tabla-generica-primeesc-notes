@@ -31,7 +31,14 @@ Campos clave:
 Los nombres de propiedades del DTO backend deben mapear de forma estable con `field` en frontend. Evita renombrar sin estrategia de versionado.
 
 ## Versionado de contrato
-Recomendación:
-- `/api/v1/table/...`
-- Si cambias semántica de filtros, crear `v2`.
-- Mantener compatibilidad backward en una ventana temporal.
+**Estrategia:**
+- **URL:** `/api/v1/table/{resource}/configuration` y `/api/v1/table/{resource}/data`
+- **Si cambias:** semántica de filtros, añade `v2` (ej. `/v2/table/...`)
+- **Backward:** Mantener `v1` funcionando 1-2 ciclos de desarrollo.
+- **Deprecación:** Comunicar en logs/headers (`Deprecation: true`).
+
+**Ejemplo cambio sin romper:**
+- Añade campo opcional a DTO
+- Frontend envía ambos (viejo + nuevo)
+- Backend soporta ambos
+- Migrar cuando clientes actualizados

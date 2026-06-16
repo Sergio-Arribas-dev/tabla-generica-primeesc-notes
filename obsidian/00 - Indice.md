@@ -27,7 +27,8 @@
 - **KISS**: un endpoint de configuración + un endpoint de datos como núcleo mínimo.
 
 ## Nota de compatibilidad
-La documentación original menciona Angular/.NET más nuevos. Para Angular 19 y .NET 8 se recomienda:
-- Validar versiones de PrimeNG compatibles con Angular 19.
-- Mantener interfaces y contratos estables.
-- Evitar acoplarte a APIs internas del paquete.
+La documentaci\u00f3n original es para versiones m\u00e1s nuevas. Para **Angular 19 + .NET 8**:
+- Revisar versi\u00f3n de PrimeNG compatible con Angular 19 (este repo usa \u226519.0.0).
+- Validar que adapters HTTP/Notification se registren correctamente en DI.
+- Evitar usar APIs internas del paquete `@eternalcodestudio/primeng-table`.
+- Si tienes issues de versiones, referirse a [ejemplos-plantilla/frontend/package.json](../ejemplos-plantilla/frontend/package.json).

@@ -238,8 +238,11 @@ CREATE INDEX IX_Employees_HasHouse ON dbo.Employees(HasHouse);
 ```
 
 ## 10) Checklist backend rápido
-- `RowID` existe y es único.
-- `AsNoTracking` aplicado.
-- Validación de `PageSize` y columnas antes de query dinámica.
-- `BuildBaseQuery()` reutilizable para tabla y export.
-- Índices en columnas de filtro/sort.
+- ✓ DTO con `RowID: Guid` único y `[ColumnAttributes(sendColumnAttributes: false)]`
+- ✓ Todas las columnas decoradas con `[ColumnAttributes(...)]`
+- ✓ Repository retorna `.AsNoTracking()`
+- ✓ Service valida `PageSize` antes de query
+- ✓ `GetBaseQuery()` reutilizable para tabla y export
+- ✓ Índices SQL en columnas frecuentemente filtradas/ordenadas
+- ✓ Tests integración: GET config, POST data con varios payloads
+- ✓ Logs estructurados con RequestId

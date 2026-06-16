@@ -5,12 +5,16 @@ Frontend mínimo funcional para tabla genérica.
 ## Quickstart
 ```bash
 cd frontend
-npm install
-npm install @eternalcodestudio/primeng-table primeng primeicons @angular/common @angular/core
-ng serve
+
+# Crear proyecto Angular 19
+ng new tabla-demo --skip-git
+cd tabla-demo
+
+# Instalar paquetes
+npm install @eternalcodestudio/primeng-table primeng primeicons
 ```
 
-Reemplaza los archivos según estructura de este proyecto.
+**Luego:** Reemplaza archivos `.ts` de esta carpeta en tu proyecto (respeta paths).
 
 ## Estructura
 ```
