@@ -1,0 +1,30 @@
+# Índice — Tabla genérica basada en PrimeNG (Angular 19 + .NET 8)
+
+> Objetivo: tener una guía de implementación y mantenimiento **reutilizable**, con enfoque en **SOLID**, **KISS** y rendimiento para tablas con **lazy loading** y lógica de consulta en base de datos.
+
+## Cómo usar estos apuntes
+1. Leer [[01 - Arquitectura y flujo]] para entender la visión global.
+2. Implementar backend con [[02 - Backend .NET 8]]
+3. Implementar frontend con [[03 - Frontend Angular 19]]
+4. Alinear contratos en [[04 - Contratos API y modelos]]
+5. Ejecutar checklist de [[05 - Plan de implementación y checklist]]
+6. Revisar [[06 - Operación, rendimiento y troubleshooting]] cuando algo falle.
+
+## Alcance
+- Base tomada del documento raíz del proyecto.
+- Adaptado a stack habitual: **ASP.NET Core 8 + Angular 19**.
+- Patrón recomendado: `Controller -> Service -> Repository`.
+
+## Principios de diseño aplicados
+- **S (SRP)**: cada capa tiene una responsabilidad única.
+- **O (OCP)**: columnas y filtros extensibles por metadatos.
+- **L (LSP)**: servicios abstractos de HTTP/notificación reemplazables.
+- **I (ISP)**: contratos pequeños para vistas, query y export.
+- **D (DIP)**: frontend depende de abstracciones; backend también.
+- **KISS**: un endpoint de configuración + un endpoint de datos como núcleo mínimo.
+
+## Nota de compatibilidad
+La documentación original menciona Angular/.NET más nuevos. Para Angular 19 y .NET 8 se recomienda:
+- Validar versiones de PrimeNG compatibles con Angular 19.
+- Mantener interfaces y contratos estables.
+- Evitar acoplarte a APIs internas del paquete.
