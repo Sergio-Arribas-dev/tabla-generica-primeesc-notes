@@ -9,6 +9,9 @@
 4. Alinear contratos en [[04 - Contratos API y modelos]]
 5. Ejecutar checklist de [[05 - Plan de implementación y checklist]]
 6. Revisar [[06 - Operación, rendimiento y troubleshooting]] cuando algo falle.
+7. Copiar la implementación de referencia en [[08 - Ejemplo end-to-end backend .NET 8]]
+8. Copiar la implementación de referencia en [[09 - Ejemplo end-to-end frontend Angular 19]]
+9. Probar payloads reales en [[10 - Payloads reales y casos de referencia]]
 
 ## Alcance
 - Base tomada del documento raíz del proyecto.
