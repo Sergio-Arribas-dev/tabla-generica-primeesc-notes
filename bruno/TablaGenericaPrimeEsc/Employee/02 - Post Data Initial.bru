@@ -1,0 +1,31 @@
+meta {
+  name: Employee - Post Data Initial
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}{{employeeTableBasePath}}/data
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "page": 1,
+    "pageSize": 25,
+    "columns": ["rowID", "username", "salary", "birthDate", "employmentStatus", "hasHouse"],
+    "sort": [],
+    "filter": {},
+    "globalFilter": null,
+    "dateFormat": "dd/MM/yyyy HH:mm",
+    "dateTimezone": "+01:00",
+    "dateCulture": "es-ES",
+    "exportDateFormat": "dd/mm/yyyy hh:mm"
+  }
+}

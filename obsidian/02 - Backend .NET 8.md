@@ -27,7 +27,7 @@ Opcional:
 4. Endpoints para vistas (`GetViews`, `SaveViews`) si persistes en BD.
 
 ## DTO base de tabla
-- Debe incluir `RowID: Guid` único.
+- Debe incluir `RowID` único y estable (Guid recomendado).
 - Toda columna que participe en tabla debe tener metadatos (`ColumnAttributes`).
 - Si una columna no debe mostrarse pero sí viajar al front: `sendColumnAttributes: false`.
 

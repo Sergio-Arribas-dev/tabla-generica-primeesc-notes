@@ -1,0 +1,56 @@
+meta {
+  name: CatalogItem - Post Data All Types
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}{{catalogTableBasePath}}/data
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "page": 1,
+    "pageSize": 25,
+    "columns": [
+      "rowID",
+      "code",
+      "name",
+      "unitPrice",
+      "stock",
+      "createdAt",
+      "isEnabled",
+      "tags",
+      "status",
+      "statusIconKey",
+      "statusImageKey"
+    ],
+    "sort": [
+      { "field": "name", "order": 1 }
+    ],
+    "filter": {
+      "isEnabled": [
+        { "matchMode": "equals", "operator": "AND", "value": true }
+      ],
+      "unitPrice": [
+        { "matchMode": "gte", "operator": "AND", "value": 10 }
+      ],
+      "status": [
+        { "matchMode": "equals", "operator": "OR", "value": "ACTIVE" },
+        { "matchMode": "equals", "operator": "OR", "value": "DRAFT" }
+      ]
+    },
+    "globalFilter": "pro",
+    "dateFormat": "dd/MM/yyyy HH:mm",
+    "dateTimezone": "+01:00",
+    "dateCulture": "es-ES",
+    "exportDateFormat": "dd/mm/yyyy hh:mm"
+  }
+}

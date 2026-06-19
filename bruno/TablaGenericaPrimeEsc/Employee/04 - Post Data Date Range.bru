@@ -1,0 +1,35 @@
+meta {
+  name: Employee - Post Data Date Range
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}{{employeeTableBasePath}}/data
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "page": 1,
+    "pageSize": 25,
+    "columns": ["rowID", "username", "birthDate", "employmentStatus"],
+    "sort": [],
+    "filter": {
+      "birthDate": [
+        { "matchMode": "between", "operator": "AND", "value": ["1990-01-01", "2000-12-31"] }
+      ]
+    },
+    "globalFilter": null,
+    "dateFormat": "dd/MM/yyyy HH:mm",
+    "dateTimezone": "+01:00",
+    "dateCulture": "es-ES",
+    "exportDateFormat": "dd/mm/yyyy hh:mm"
+  }
+}

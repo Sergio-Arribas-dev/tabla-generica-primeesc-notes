@@ -1,0 +1,42 @@
+meta {
+  name: Employee - Post Data Filters And Sort
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}{{employeeTableBasePath}}/data
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "page": 1,
+    "pageSize": 25,
+    "columns": ["rowID", "username", "salary", "employmentStatus", "hasHouse"],
+    "sort": [
+      { "field": "salary", "order": -1 },
+      { "field": "username", "order": 1 }
+    ],
+    "filter": {
+      "employmentStatus": [
+        { "matchMode": "equals", "operator": "OR", "value": "Full-time" },
+        { "matchMode": "equals", "operator": "OR", "value": "Contract" }
+      ],
+      "salary": [
+        { "matchMode": "gte", "operator": "AND", "value": 30000 }
+      ]
+    },
+    "globalFilter": "ser",
+    "dateFormat": "dd/MM/yyyy HH:mm",
+    "dateTimezone": "+01:00",
+    "dateCulture": "es-ES",
+    "exportDateFormat": "dd/mm/yyyy hh:mm"
+  }
+}
